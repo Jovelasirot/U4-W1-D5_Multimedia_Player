@@ -2,30 +2,23 @@ import entities.Audio;
 import entities.Image;
 import entities.Multimedia;
 import entities.Video;
+import entities.interfaces.Playable;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-
-        //        Audio audioA = new Audio("Unwritten", 2, 4);
-//        Video videoA = new Video("Avenger", 2, 3, 5);
-//        Image imageA = new Image("Cat", 2);
-
-
         Scanner scanner = new Scanner(System.in);
 
-
-        Multimedia[] multimediaElements = new Multimedia[5];
+        Multimedia[] multimediaElements = new Multimedia[1];
         int insertedElements = 0;
 
-
-        while (insertedElements < 5) {
+        while (insertedElements < 1) {
 
 
             System.out.println("What type of media do you want to add (1 for Audio, 2 for video, 3 for images)");
-            
+
             int typeOfMedia = scanner.nextInt();
             scanner.nextLine();
 
@@ -73,11 +66,27 @@ public class Main {
                 default:
                     System.out.println("Type not valid, try another.");
             }
+
+            insertedElements++;
         }
 
         int handleMediaShown;
+        do {
+            System.out.println("Select the element you want to play 1 to 5 or 0 to cancel");
+            handleMediaShown = scanner.nextInt();
+            if (handleMediaShown >= 1 && handleMediaShown <= 5) {
+                Multimedia elementSelected = multimediaElements[handleMediaShown - 1];
+                if (elementSelected instanceof Playable) {
+                    ((Playable) elementSelected).play();
+                }
+            }
+        } while (handleMediaShown != 0);
 
 
         scanner.close();
     }
 }
+
+//else {
+//        System.out.println("Media not playable");
+//                }
