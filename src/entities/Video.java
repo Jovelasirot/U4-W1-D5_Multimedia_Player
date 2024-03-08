@@ -55,7 +55,7 @@ public class Video extends Multimedia implements Playable, Brightness, Volume {
 
     @Override
     public void increaseVolume() {
-        if (volume <= 10) {
+        if (volume < 10) {
             volume++;
         }
     }
