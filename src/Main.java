@@ -33,6 +33,16 @@ public class Main {
                     System.out.println("Volume of the audio:");
                     int audioVolume = scanner.nextInt();
 
+                    if (audioVolume > 10) {
+
+                        System.out.println("Volume can't be more than 10, automatically set to max volume");
+                        audioVolume = 10;
+                    } else if (audioVolume < 0) {
+
+                        System.out.println("Volume can't be less than 0, automatically set to minimum volume");
+                        audioVolume = 0;
+                    }
+
                     multimediaElements[insertedElements] = new Audio(titleAudio, audioDuration, audioVolume);
 
                     break;
@@ -40,12 +50,23 @@ public class Main {
                     System.out.println("Insert the title of the video");
                     String videoTitle = scanner.nextLine();
 
-
                     System.out.println("Duration of the video:");
                     int videoDuration = scanner.nextInt();
 
                     System.out.println("Volume of the video:");
                     int videoVolume = scanner.nextInt();
+                 
+
+                    if (videoVolume > 10) {
+
+                        System.out.println("Volume can't be more than 10, automatically set to max volume");
+                        videoVolume = 10;
+                    } else if (videoVolume < 0) {
+
+                        System.out.println("Volume can't be less than 0, automatically set to minimum volume");
+                        videoVolume = 0;
+                    }
+
 
                     System.out.println("Brightness of the video:");
                     int videoBrightness = scanner.nextInt();

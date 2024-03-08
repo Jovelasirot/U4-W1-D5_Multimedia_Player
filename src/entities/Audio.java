@@ -37,8 +37,10 @@ public class Audio extends Multimedia implements Volume, Playable {
     public void increaseVolume() {
         if (volume <= 10) {
             volume++;
+        } else {
+            System.out.println("Volume can't be more than 10");
         }
-        System.out.println("Volume can't be more than 10");
+
     }
 
     @Override
