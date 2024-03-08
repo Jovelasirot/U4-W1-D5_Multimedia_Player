@@ -25,7 +25,7 @@ public class Audio extends Multimedia implements Volume, Playable {
             for (int j = 0; j < volume; j++) {
                 System.out.println("!");
             }
-            System.out.println(title);
+            System.out.println("Audio name: " + title);
         }
     }
 

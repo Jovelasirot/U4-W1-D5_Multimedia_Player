@@ -26,7 +26,8 @@ public class Video extends Multimedia implements Playable, Brightness, Volume {
             for (int k = 0; k < brightness; k++) {
                 System.out.print("*");
             }
-            System.out.println();
+            System.out.println("Video name: " + title);
+            System.out.println("---------------------");
         }
     }
 
