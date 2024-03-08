@@ -138,7 +138,6 @@ public class Main {
 
                     System.out.println("Increase the brightness (I) or decrease it (D)");
 
-
                     String handleBrightness = scanner.nextLine();
 
                     if (Objects.equals(handleBrightness, "I")) {

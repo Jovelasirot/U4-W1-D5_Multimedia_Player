@@ -21,11 +21,15 @@ public class Audio extends Multimedia implements Volume, Playable {
 
     @Override
     public void play() {
-        for (int i = 0; i < duration; i++) {
-            for (int j = 0; j < volume; j++) {
-                System.out.println("!");
+        if (duration > 0) {
+            for (int i = 0; i < duration; i++) {
+                for (int j = 0; j < volume; j++) {
+                    System.out.println("!");
+                }
+                System.out.println("Audio name: " + title);
             }
-            System.out.println("Audio name: " + title);
+        } else {
+            System.out.println(title + " can't be played, because it has an invalid duration");
         }
     }
 
@@ -34,12 +38,15 @@ public class Audio extends Multimedia implements Volume, Playable {
         if (volume <= 10) {
             volume++;
         }
+        System.out.println("Volume can't be more than 10");
     }
 
     @Override
     public void decreaseVolume() {
         if (volume > 0) {
             volume--;
+        } else {
+            System.out.println("Volume can't be less than 0");
         }
     }
 
