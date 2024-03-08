@@ -58,4 +58,14 @@ public class Video extends Multimedia implements Playable, Brightness, Volume {
             volume--;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "duration=" + duration +
+                ", volume=" + volume +
+                ", brightness=" + brightness +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

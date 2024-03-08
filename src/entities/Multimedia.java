@@ -16,5 +16,10 @@ public abstract class Multimedia {
         this.title = title;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Multimedia{" +
+                "title='" + title + '\'' +
+                '}';
+    }
 }

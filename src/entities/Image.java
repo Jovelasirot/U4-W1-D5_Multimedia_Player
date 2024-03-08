@@ -31,4 +31,12 @@ public class Image extends Multimedia implements Brightness {
         }
         System.out.println("Image of: " + title);
     }
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "brightness=" + brightness +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

@@ -70,8 +70,17 @@ public class Main {
             insertedElements++;
         }
 
+
+        System.out.println("------------------------------------------");
+
         int handleMediaShown;
         do {
+            for (int i = 0; i < multimediaElements.length; i++) {
+                System.out.println("Multimedia element " + (i + 1));
+                System.out.println(multimediaElements[i].toString());
+                System.out.println("----------------------------");
+            }
+
             System.out.println("Select the element you want to play 1 to 5 or 0 to cancel");
             handleMediaShown = scanner.nextInt();
 
@@ -92,7 +101,7 @@ public class Main {
 
                     }
                     audioX.play();
-
+                    System.out.println("------------------------------------------");
 
                 } else if (elementSelected instanceof Image) {
                     Image imageX = (Image) elementSelected;
@@ -109,7 +118,7 @@ public class Main {
 
                     }
                     imageX.show();
-
+                    System.out.println("------------------------------------------");
 
                 } else if (elementSelected instanceof Video) {
                     Video videoX = (Video) elementSelected;
@@ -140,7 +149,7 @@ public class Main {
 
                     }
                     videoX.play();
-
+                    System.out.println("------------------------------------------");
                 }
             }
         } while (handleMediaShown != 0);
