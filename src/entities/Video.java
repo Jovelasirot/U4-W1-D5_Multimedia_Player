@@ -1,8 +1,8 @@
 package entities;
 
-import entities.interfaces.Brightness;
-import entities.interfaces.Playable;
-import entities.interfaces.Volume;
+import interfaces.Brightness;
+import interfaces.Playable;
+import interfaces.Volume;
 
 public class Video extends Multimedia implements Playable, Brightness, Volume {
     private int duration;

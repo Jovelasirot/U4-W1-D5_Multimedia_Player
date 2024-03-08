@@ -1,6 +1,6 @@
 package entities;
 
-import entities.interfaces.Brightness;
+import interfaces.Brightness;
 
 public class Image extends Multimedia implements Brightness {
 

@@ -1,4 +1,4 @@
-package entities.interfaces;
+package interfaces;
 
 public interface Brightness {
     public void increaseBrightness();

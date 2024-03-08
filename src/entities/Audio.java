@@ -1,7 +1,7 @@
 package entities;
 
-import entities.interfaces.Playable;
-import entities.interfaces.Volume;
+import interfaces.Playable;
+import interfaces.Volume;
 
 public class Audio extends Multimedia implements Volume, Playable {
 
