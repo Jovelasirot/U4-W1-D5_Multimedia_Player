@@ -29,7 +29,7 @@ public class Image extends Multimedia implements Brightness {
         for (int i = 0; i < brightness; i++) {
             System.out.println("*");
         }
-        System.out.println("Image of: " + title);
+        System.out.println("Image of: " + "'" + title + "'");
     }
 
     @Override

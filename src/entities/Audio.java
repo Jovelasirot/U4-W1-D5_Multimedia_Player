@@ -26,10 +26,10 @@ public class Audio extends Multimedia implements Volume, Playable {
                 for (int j = 0; j < volume; j++) {
                     System.out.println("!");
                 }
-                System.out.println("Audio name: " + title);
+                System.out.println("Audio name: " + "'" + title + "'");
             }
         } else {
-            System.out.println(title + " can't be played, because it has an invalid duration");
+            System.out.println("'" + title + "'" + " can't be played, because it has an invalid duration");
         }
     }
 

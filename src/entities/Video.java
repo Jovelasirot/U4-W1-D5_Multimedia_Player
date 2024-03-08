@@ -27,25 +27,29 @@ public class Video extends Multimedia implements Playable, Brightness, Volume {
                 for (int k = 0; k < brightness; k++) {
                     System.out.print("*");
                 }
-                System.out.println("Video name: " + title);
+                System.out.println("Video name: " + "'" + title + "'");
                 System.out.println("---------------------");
             }
         } else {
-            System.out.println(title + " can't be played, because it has an invalid duration");
+            System.out.println("'" + title + "'" + " can't be played, because it has an invalid duration");
         }
     }
 
     @Override
     public void increaseBrightness() {
-        if (brightness > 0 && brightness < 10) {
+        if (brightness <= 10) {
             brightness++;
+        } else {
+            System.out.println("Brightness can't be more than 10");
         }
     }
 
     @Override
     public void decreaseBrightness() {
-        if (brightness > 0 && brightness < 10) {
+        if (brightness >= 0) {
             brightness--;
+        } else {
+            System.out.println("Brightness can't be less than 0");
         }
     }
 

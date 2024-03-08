@@ -11,12 +11,12 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        Multimedia[] multimediaElements = new Multimedia[1];
+        Multimedia[] multimediaElements = new Multimedia[5];
         int insertedElements = 0;
 
-        while (insertedElements < 1) {
+        while (insertedElements < 5) {
 
-
+            System.out.println("Create " + (5 - insertedElements) + " Multimedia elements");
             System.out.println("What type of media do you want to add (1 for Audio, 2 for video, 3 for images)");
 
             int typeOfMedia = scanner.nextInt();
@@ -24,7 +24,7 @@ public class Main {
 
             switch (typeOfMedia) {
                 case 1:
-                    System.out.println("Insert the title of the audio");
+                    System.out.println("Insert the title of the audio:");
                     String titleAudio = scanner.nextLine();
 
                     System.out.println("Duration of the audio:");
@@ -45,9 +45,10 @@ public class Main {
 
                     multimediaElements[insertedElements] = new Audio(titleAudio, audioDuration, audioVolume);
 
+                    System.out.println("------------------------------------------");
                     break;
                 case 2:
-                    System.out.println("Insert the title of the video");
+                    System.out.println("Insert the title of the video:");
                     String videoTitle = scanner.nextLine();
 
                     System.out.println("Duration of the video:");
@@ -55,7 +56,7 @@ public class Main {
 
                     System.out.println("Volume of the video:");
                     int videoVolume = scanner.nextInt();
-                 
+
 
                     if (videoVolume > 10) {
 
@@ -71,17 +72,39 @@ public class Main {
                     System.out.println("Brightness of the video:");
                     int videoBrightness = scanner.nextInt();
 
+                    if (videoBrightness > 10) {
+                        System.out.println("Brightness can't be more than 10, automatically set to max brightness");
+                        videoBrightness = 10;
+                    } else if (videoBrightness < 0) {
+                        System.out.println("Brightness can't be less than 0, automatically set to min brightness");
+                        videoBrightness = 0;
+
+                    }
+
                     multimediaElements[insertedElements] = new Video(videoTitle, videoDuration, videoVolume, videoBrightness);
+
+                    System.out.println("------------------------------------------");
 
                     break;
                 case 3:
-                    System.out.println("Insert the title of the image");
+                    System.out.println("Insert the title of the image:");
                     String imageTitle = scanner.nextLine();
 
                     System.out.println("Brightness of the image:");
                     int imageBrightness = scanner.nextInt();
 
+                    if (imageBrightness > 10) {
+                        System.out.println("Brightness can't be more than 10, automatically set to max brightness");
+                        imageBrightness = 10;
+                    } else if (imageBrightness < 0) {
+                        System.out.println("Brightness can't be less than 0, automatically set to min brightness");
+                        imageBrightness = 0;
+
+                    }
+
                     multimediaElements[insertedElements] = new Image(imageTitle, imageBrightness);
+
+                    System.out.println("------------------------------------------");
 
                     break;
                 default:
