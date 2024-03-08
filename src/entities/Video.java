@@ -2,8 +2,9 @@ package entities;
 
 import entities.interfaces.Brightness;
 import entities.interfaces.Playable;
+import entities.interfaces.Volume;
 
-public class Video extends Multimedia implements Playable, Brightness {
+public class Video extends Multimedia implements Playable, Brightness, Volume {
     private int duration;
     private int volume;
     private int brightness;
@@ -40,6 +41,20 @@ public class Video extends Multimedia implements Playable, Brightness {
     public void decreaseBrightness() {
         if (brightness > 0 && brightness < 10) {
             brightness--;
+        }
+    }
+
+    @Override
+    public void increaseVolume() {
+        if (volume <= 10) {
+            volume++;
+        }
+    }
+
+    @Override
+    public void decreaseVolume() {
+        if (volume > 0) {
+            volume--;
         }
     }
 }

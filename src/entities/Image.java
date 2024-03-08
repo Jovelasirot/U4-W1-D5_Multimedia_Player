@@ -24,4 +24,11 @@ public class Image extends Multimedia implements Brightness {
             brightness--;
         }
     }
+
+    public void show() {
+        for (int i = 0; i < brightness; i++) {
+            System.out.println("*");
+        }
+        System.out.println(title);
+    }
 }

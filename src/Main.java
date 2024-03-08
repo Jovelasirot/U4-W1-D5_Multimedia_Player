@@ -2,8 +2,8 @@ import entities.Audio;
 import entities.Image;
 import entities.Multimedia;
 import entities.Video;
-import entities.interfaces.Playable;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -74,10 +74,73 @@ public class Main {
         do {
             System.out.println("Select the element you want to play 1 to 5 or 0 to cancel");
             handleMediaShown = scanner.nextInt();
+
             if (handleMediaShown >= 1 && handleMediaShown <= 5) {
                 Multimedia elementSelected = multimediaElements[handleMediaShown - 1];
-                if (elementSelected instanceof Playable) {
-                    ((Playable) elementSelected).play();
+                if (elementSelected instanceof Audio) {
+                    Audio audioX = (Audio) elementSelected;
+                    System.out.println("Increase the volume (I) or decrease it (D)");
+                    scanner.nextLine();
+
+                    String handleVolume = scanner.nextLine();
+
+                    if (Objects.equals(handleVolume, "I")) {
+                        audioX.increaseVolume();
+
+                    } else if (Objects.equals(handleVolume, "D")) {
+                        audioX.decreaseVolume();
+
+                    }
+                    audioX.play();
+
+
+                } else if (elementSelected instanceof Image) {
+                    Image imageX = (Image) elementSelected;
+                    System.out.println("Increase the brightness (I) or decrease it (D)");
+                    scanner.nextLine();
+
+                    String handleBrightness = scanner.nextLine();
+
+                    if (Objects.equals(handleBrightness, "I")) {
+                        imageX.increaseBrightness();
+
+                    } else if (Objects.equals(handleBrightness, "D")) {
+                        imageX.decreaseBrightness();
+
+                    }
+                    imageX.show();
+
+
+                } else if (elementSelected instanceof Video) {
+                    Video videoX = (Video) elementSelected;
+
+                    System.out.println("Increase the volume (I) or decrease it (D)");
+                    scanner.nextLine();
+
+                    String handleVolume = scanner.nextLine();
+
+                    if (Objects.equals(handleVolume, "I")) {
+                        videoX.increaseVolume();
+
+                    } else if (Objects.equals(handleVolume, "D")) {
+                        videoX.decreaseVolume();
+
+                    }
+
+                    System.out.println("Increase the brightness (I) or decrease it (D)");
+
+
+                    String handleBrightness = scanner.nextLine();
+
+                    if (Objects.equals(handleBrightness, "I")) {
+                        videoX.increaseBrightness();
+
+                    } else if (Objects.equals(handleBrightness, "D")) {
+                        videoX.decreaseBrightness();
+
+                    }
+                    videoX.play();
+
                 }
             }
         } while (handleMediaShown != 0);
@@ -86,7 +149,3 @@ public class Main {
         scanner.close();
     }
 }
-
-//else {
-//        System.out.println("Media not playable");
-//                }
