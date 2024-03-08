@@ -8,7 +8,7 @@ public class Video extends Multimedia implements Playable, Brightness {
     private int volume;
     private int brightness;
 
-    public Video(String title) {
+    public Video(String title, int duration, int volume, int brightness) {
         super(title);
         this.duration = duration;
         this.volume = volume;
